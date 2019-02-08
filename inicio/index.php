@@ -13,7 +13,7 @@ if (!isset($_SESSION['usua_predio']))
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <title>Trivia Cerveza 593</title>
+        <title>Trivia Cerveza 593 La PreLi</title>
         <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 
         <link rel="stylesheet" href="../css/jquery-ui.css">
@@ -28,19 +28,19 @@ if (!isset($_SESSION['usua_predio']))
 
     </head>
     <body>
-   
+
         <form role="form" class="form-horizontal">
 
 
         	<div class="row titulo">
                 <div class="col-md-2 col-xs-2">
                 </div>
-        		<div class="col-md-7 col-xs-7">
-                    <img class="imgjuego" src="../imagenes/logo_juego.png" width="45%" style="margin-top: -8%;">
+        		<div class="col-md-6 col-xs-6" align="center">
+                    <img class="imgjuego" src="../imagenes/lapreli/dash_logo.png" width="50%" style="margin-top: -8%;">
                 </div>
                 <div class="col-md-3 col-xs-3">
                 </div>
-        		
+
         	</div>
 
             <div class="row">
@@ -48,10 +48,10 @@ if (!isset($_SESSION['usua_predio']))
                 <div class="col-md-2 col-xs-1">
                 </div>
 
-                
 
-                <div class="col-md-5 col-xs-6" style="text-align: center;">
-                    <button type="button" class="btn btn-default enjoy-css-buttom-juego" id="iniciar" style="margin-right: 1%;">INICIO</button>
+
+                <div class="col-md-6 col-xs-6" style="text-align: center;">
+                    <button type="button" class="btn btn-default enjoy-css-buttom2" id="iniciar" style="margin-right: 1%;">INICIO</button>
                 </div>
                 <div class="col-md-2 col-xs-3">
                 </div>
@@ -59,22 +59,22 @@ if (!isset($_SESSION['usua_predio']))
                 </div>
             </div>
     	    </div>
-        
+
 <div class="footer">
-    
+
         </div>
 
 
         <div class="footer">
-    
+
         </div>
 
-        <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_otela_iniciob.png" style="float: right; top: 0; right: 0; position: absolute; height: 100%; z-index: 97; margin-right: 5%;">
-        <img class="animated bounceInLeft delay-2s" src="../imagenes/bg_otela_inicio.png" style="float: right; top: 0; right: 0; position: absolute; height: 100%; z-index: 98;">
-        
+        <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/bg_otela_iniciob.png" style="float: right; top: 0; right: 0; position: absolute; height: 100%; z-index: 97; margin-right: 5%;">
+        <img class="animated bounceInLeft delay-2s" src="../imagenes/lapreli/bg_otela_inicio.png" style="float: right; top: 0; right: 0; position: absolute; height: 100%; z-index: 98;">
+
 </form>
     <script type="text/javascript">
-        
+
         $(document).ready(function(){
             $('#iniciar').click(function() {
                 url = "../juego/";
@@ -113,20 +113,20 @@ if (!isset($_SESSION['usua_predio']))
                 return{x:_x,y:_y};
             }
             var center = wndsize();
-            
+
             if (center.width >= 1000) {
-                $('.imgjuego').css('width','40%');
+                $('.imgjuego').css('width','50%');
             }
 
             $( window ).resize(function() {
                 if (center.width >= 1000) {
-                    $('.imgjuego').css('width','40%');
+                    $('.imgjuego').css('width','50%');
                 } else {
-                    $('.imgjuego').css('width','45%');
+                    $('.imgjuego').css('width','55%');
                 }
             });
         });/* fin del document ready */
-    
+
     </script>
 
 

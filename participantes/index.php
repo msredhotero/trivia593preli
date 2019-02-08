@@ -14,7 +14,7 @@ if (!isset($_SESSION['usua_predio']))
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <title>Trivia Cerveza 593</title>
+        <title>Trivia Cerveza 593 La PreLi</title>
         <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 
         <link rel="stylesheet" href="../css/jquery-ui.css">
@@ -24,7 +24,7 @@ if (!isset($_SESSION['usua_predio']))
         <script src="../bootstrap/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="../css/estiloTribia.css"/>
-        
+
         <style>
 		.terminosC {
 		    background-color: #0f0559;
@@ -72,7 +72,7 @@ if (!isset($_SESSION['usua_predio']))
 		@font-face {
 		  font-family: 'DIN LIGHT';
 		  src: url('../fuentes/Formulario/DIN-Light-Regular.woff') format('woff'); /* IE9 Compat Modes */
-		  src: url('../fuentes/Formulario/DIN Light Regular/DIN Light Regular.otf')  format('truetype'), /* Safari, Android, iOS */   
+		  src: url('../fuentes/Formulario/DIN Light Regular/DIN Light Regular.otf')  format('truetype'), /* Safari, Android, iOS */
 		}
 
 
@@ -82,12 +82,12 @@ if (!isset($_SESSION['usua_predio']))
     <body>
     	<div class="row">
     		<div class="col-md-12 titulo">
-    			<img src="../dashboard/imagenes/dash_logo.png">
+    			<img src="../dashboard/imagenes/lapreli/dash_logo.png">
     		</div>
 
     	</div>
 
-    	<div class="row titulo3">
+    	<div class="row titulo2">
     		<form role="form" class="form-horizontal">
     			<div class="form-group">
     				<div class="col-md-2 col-xs-1">
@@ -130,7 +130,7 @@ if (!isset($_SESSION['usua_predio']))
     				</div>
 
 					<div class="col-md-5 col-xs-7" style="text-align: right;">
-						<button type="button" class="btn btn-default enjoy-css-buttom" id="login" style="margin-right: 1%;">EMPEZAR JUEGO</button>
+						<button type="button" class="enjoy-css-buttom2" id="login" style="margin-right: 1%;">EMPEZAR JUEGO</button>
 					</div>
 					<div class="col-md-3 col-xs-2">
     				</div>
@@ -147,7 +147,7 @@ if (!isset($_SESSION['usua_predio']))
                     </div>
                 </div>
     		</form>
-    		
+
     	</div>
 
     <!-- Modal -->
@@ -161,7 +161,7 @@ if (!isset($_SESSION['usua_predio']))
             <h4 class="modal-title">Notificación</h4>
           </div>
           <div class="modal-body respuesta">
-            
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -287,9 +287,9 @@ if (!isset($_SESSION['usua_predio']))
     </div>
 
     <script type="text/javascript">
-        
+
         $(document).ready(function(){
-            
+
             $('#terminoscondiciones').click(function() {
                 $('#myModal2').modal();
             });
@@ -303,8 +303,8 @@ if (!isset($_SESSION['usua_predio']))
                     $("#email").removeClass("errorInput");
                     $("#email").attr('placeholder','Ingrese el email');
                 });
-                
-                
+
+
                 $("#cedula").click(function(event) {
                     $("#cedula").removeClass("errorInput");
                     $("#cedula").attr('placeholder','Ingrese su Identificación');
@@ -325,19 +325,19 @@ if (!isset($_SESSION['usua_predio']))
                     $("#apyn").removeClass("errorInput");
                     $("#apyn").attr('placeholder','Ingrese su Apellidos y Nombres');
                 });
-                
-            
+
+
             function validador(){
 
                     $error = "";
-    
+
                     if ($("#email").val() == "") {
                         $error = "Es obligatorio el campo E-Mail.";
 
                         $("#email").addClass("errorInput");
                         $("#email").attr('placeholder',$error);
                     }
-                    
+
                     if ($("#cedula").val() == "") {
                         $error = "Es obligatorio el campo de Identificación.";
 
@@ -352,24 +352,24 @@ if (!isset($_SESSION['usua_predio']))
                         $("#apyn").addClass("errorInput");
                         $("#apyn").attr('placeholder',$error);
                     }
-                    
 
-                    
-                    
+
+
+
                     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                    
+
                     if( !emailReg.test( $("#email").val() ) ) {
                         $error = "El E-Mail ingresado es inválido.";
                         $("#email").val('');
                         $("#email").addClass("errorInput");
                         $("#email").attr('placeholder',$error);
-                        
+
                     }
 
                     return $error;
             }
-            
-            
+
+
             $("#login").click(function(event) {
                 var terminoscondiciones = 0;
                 if ($("#terminoscondiciones").prop('checked')) {
@@ -392,9 +392,9 @@ if (!isset($_SESSION['usua_predio']))
                             $('.respuesta').html('');
                         },
                         success:  function (response) {
-                                
+
                             if (response != '') {
-                                
+
                                 $('.respuesta').html('<strong>Error!</strong> '+response);
                                 $('#myModal').modal();
 
@@ -406,16 +406,16 @@ if (!isset($_SESSION['usua_predio']))
                                     $('.respuesta').html('<strong>Error!</strong> Lo siento pero sino acepta los términos y condiciones no puede jugar');
                                     $('#myModal').modal();
                                 }
-                                
+
                             }
-                                
+
                         }
                     });
                 }
             });
-            
+
         });/* fin del document ready */
-    
+
     </script>
 
     </body>

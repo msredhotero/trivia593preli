@@ -9,7 +9,7 @@ body {
 	width: 100%;
 	height: auto;
 
-	background: #0f0559 url(../imagenes/bg-1.jpg) 0% 0% no-repeat;
+	background: #020230 url(../imagenes/lapreli/bg-1.jpg) 0% 0% no-repeat;
 	background-size: cover;
 /*background:#FFF;*/
 }
@@ -21,7 +21,7 @@ body {
 
 .titulo2 {
 	text-align: center;
-	margin-top: 9%;
+	margin-top: 5%;
 }
 
 .titulo3 {
@@ -30,7 +30,7 @@ body {
 }
 
 .titulo img {
-	width: 11%;
+	width: 27%;
 }
 
 .row {
@@ -65,14 +65,60 @@ body {
   box-sizing: content-box;
   cursor: pointer;
   padding: 3px 20px;
-  border: 1px solid #9298ba;
+  border: 1px solid #382d99;
   -webkit-border-radius: 23px;
   border-radius: 23px;
   font: normal 30px BebasNeueRegular;
   color: rgba(255,255,255,1);
   -o-text-overflow: clip;
   text-overflow: clip;
-  background: rgba(146,152,186,1);
+  background: rgba(53,42,151,1);
+}
+
+.enjoy-css-buttom2 {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 3px 20px;
+  border: 1px solid #382d99;
+  -webkit-border-radius: 23px;
+  border-radius: 23px;
+  font: normal 30px BebasNeueRegular;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(53,42,151,1);
+  -webkit-box-shadow: 4px 5px 40px -10px rgba(53,42,151,1.8);
+   -moz-box-shadow: 4px 5px 40px -10px rgba(53,42,151,1.8);
+   box-shadow: 5px 40px -10px rgba(53,42,151,1.8);
+}
+
+.enjoy-css-buttom::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -5px;
+  left: -2%;
+  height: 110%;
+  width: 105%;
+  opacity: 0.8;
+  border-radius: 50px;
+
+  /* Declaring our shadow color inherit from the parent (button) */
+  background: inherit;
+
+  /* Blurring the element for shadow effect */
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
+
+  /* Transition for the magic */
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .enjoy-css-buttom:hover {
@@ -119,5 +165,3 @@ body {
   font-family: "BebasNeueRegular";
   src: url("../fuentes/Quiz/Bebas Neue/BebasNeue Regular.otf");
 }
-
-

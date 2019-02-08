@@ -35,10 +35,10 @@ if (mysql_num_rows($existe)>0) {
     if (mysql_result($existe, 0,'intento') == 0) {
         $yajugo = 0;
     } else {
-        $yajugo = 0;    
+        $yajugo = 0;
         //$serviciosReferencias->modificarEstado($_SESSION['idparticipante'],4);
     }
-    
+
 } else {
     $serviciosReferencias->insertarUsuariostribia($_SESSION['idparticipante'],$cantidadaciertos,$intento,$refestados,$refpremios,$puntobonusa,$aciertobonusa,$puntobonusb,$aciertobonusb);
 }
@@ -57,8 +57,8 @@ if (mysql_num_rows($existe)>0) {
 		<script src="../js/jquery-ui.js"></script>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
         <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <script src="../js/progressbar.min.js"></script>
-        
+        <!-- <script src="../js/progressbar.min.js"></script> -->
+
         <link rel="stylesheet" type="text/css" href="../css/estiloTribiaJuego.css"/>
         <link rel="stylesheet" href="../css/animate.min.css">
         <style>
@@ -73,8 +73,22 @@ if (mysql_num_rows($existe)>0) {
     <body>
 
         <form role="form" class="form-horizontal">
+         <div id="contenedorVideos">
+            <div class="row" style="margin-top:2%;">
+               <div class="col-md-1 col-xs-1">
+               </div>
+               <div class="col-md-10 col-xs-10" align="center">
+                  <video width="90%" height="90%" id="myVideo" autoplay>
+                  <source src="../imagenes/lapreli/videos/Nivel_1-PISCINA.mp4" type="video/mp4">
+                  Tu navegador no soporta vídeo.
+                  </video>
+               </div>
+               <div class="col-md-1 col-xs-1">
+               </div>
 
-        <div id="contenedorPreguntas">
+           	</div>
+         </div>
+        <div id="contenedorPreguntas" style="display: none;">
         	<div class="row titulo" align="center" id="lstPreguntas">
                 <div class="row" style="margin-top: 0%;">
                     <div class="col-md-3 col-xs-2">
@@ -130,7 +144,7 @@ if (mysql_num_rows($existe)>0) {
 
             <input type="hidden" name="valorRespuesta" id="valorRespuesta" value="0" />
             <input type="hidden" name="valorPregunta" id="valorPregunta" value="1" />
-            
+
             <div class="row">
             <div class="form-group" style="margin-top: 2%;">
                 <div class="col-md-3 col-xs-3">
@@ -146,14 +160,15 @@ if (mysql_num_rows($existe)>0) {
                     ?>
                     <button type="button" class="btn btn-default enjoy-css-buttom-juego" id="responder">RESPUESTA</button>
                     <?php
-                    } 
+                    }
                     ?>
                 </div>
                 <div class="col-md-3 col-xs-3">
                 </div>
             </div>
             </div>
-            
+
+            <!--
             <div class="row">
             <div class="form-group" style="margin-top: 1%;">
                 <div class="col-md-3 col-xs-3">
@@ -166,7 +181,7 @@ if (mysql_num_rows($existe)>0) {
                 </div>
             </div>
             </div>
-    	
+            -->
         </div>
 
         <!-- animated flash infinite -->
@@ -180,7 +195,7 @@ if (mysql_num_rows($existe)>0) {
 
 
             <div class="footer">
-        
+
             </div>
 
         </div>
@@ -197,7 +212,7 @@ if (mysql_num_rows($existe)>0) {
             <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_meetgret_cerveza.png" style="float: left; bottom: 0; left: 0; height: 70%;z-index: 52; position: absolute; margin-left: 13%;">
 
             <div class="footer">
-        
+
             </div>
 
         </div>
@@ -211,7 +226,7 @@ if (mysql_num_rows($existe)>0) {
             <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_meetgret_cerveza.png" style="float: right; bottom: 0; right: 0; height: 70%;z-index: 51; position: absolute; margin-right: 4%;">
             <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_meetgret_cervezab.png" style="float: left; bottom: 0; left: 0; height: 70%;z-index: 52; position: absolute; margin-left: 4%;">
             <div class="footer">
-        
+
             </div>
 
         </div>
@@ -223,7 +238,7 @@ if (mysql_num_rows($existe)>0) {
             <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
-        
+
             </div>
 
         </div>
@@ -234,7 +249,7 @@ if (mysql_num_rows($existe)>0) {
             <img class="animated bounceInLeft delay-1s acarr" src="../imagenes/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
-        
+
             </div>
 
         </div>
@@ -251,7 +266,7 @@ if (mysql_num_rows($existe)>0) {
                 <h4 class="modal-title">Notificación</h4>
               </div>
               <div class="modal-body respuesta">
-                
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -267,8 +282,14 @@ if (mysql_num_rows($existe)>0) {
 
 
     <script type="text/javascript">
-        
+
         $(document).ready(function(){
+
+           $("#myVideo").on('ended', function(){
+             cambiarBackground('url(../imagenes/lapreli/bg_pregunta_1.jpg)');
+             $('#contenedorVideos').hide();
+             $('#contenedorPreguntas').show();
+           });
 
             $('.btnrespuesta').click(function() {
                 $('.btnrespuesta').removeClass('enjoy-css-active');
@@ -276,7 +297,7 @@ if (mysql_num_rows($existe)>0) {
                 $('#'+idResp).addClass('enjoy-css-active');
 
             });
-            
+
 
             $('#volver').click(function() {
                 url = "../participantes/";
@@ -298,10 +319,10 @@ if (mysql_num_rows($existe)>0) {
                     url: '../json/jspregunta.php',
                     data: {nivel: nivel},
                     beforeSend: function (XMLHttpRequest) {
-                            
+
                     },
                     success: function(datos) {
-                                
+
                                 for (var clave in datos) {
                                     $('.pregunta').html(datos[clave].var1);
                                     $('.respuesta1').html(datos[clave].var2);
@@ -321,9 +342,9 @@ if (mysql_num_rows($existe)>0) {
 
                                     //alert(datos[clave].var1);
                                     //alert(datos[clave].id);
-                                    
-                                    
-                                    
+
+
+
                                 }
                     },
                     error: function() { alert("Error leyendo fichero json"); }
@@ -331,7 +352,8 @@ if (mysql_num_rows($existe)>0) {
             }
 
             traerPregunta($('#valorPregunta').val());
-            
+
+            /*
             var bar = new ProgressBar.Line(barraprogreso, {
               strokeWidth: 4,
               easing: 'easeInOut',
@@ -346,7 +368,8 @@ if (mysql_num_rows($existe)>0) {
                 bar.path.setAttribute('stroke', state.color);
               }
             });
-            
+            */
+            /*
             bar.animate(1.0, {
                 duration: 34000
             }, function() {
@@ -355,7 +378,7 @@ if (mysql_num_rows($existe)>0) {
 
 
                 $('body').css("background-image", "url(../imagenes/bg_tiempo_agotado.jpg)");
-                            
+
                 $('#lstPreguntas').hide();
                 $('#responder').hide();
 
@@ -379,13 +402,14 @@ if (mysql_num_rows($existe)>0) {
                     $('#contenedorTiempoAgotado').hide();
                 }, 3000);
             });
+            */
 
             $('#responder').click(function() {
 
                 $('.btnrespuesta').removeClass('enjoy-css-active');
-                
-                bar.set(0);
-                
+
+               // bar.set(0);
+               /*
                 bar.animate(1.0, {
                     duration: 34000
                 }, function() {
@@ -395,7 +419,7 @@ if (mysql_num_rows($existe)>0) {
 
 
                     $('body').css("background-image", "url(../imagenes/bg_tiempo_agotado.jpg)");
-                                
+
                     $('#lstPreguntas').hide();
                     $('#responder').hide();
 
@@ -419,7 +443,7 @@ if (mysql_num_rows($existe)>0) {
                         $('#contenedorTiempoAgotado').hide();
                     }, 3000);
                 });
-
+                */
 
 
                 $('.respuesta').html('');
@@ -446,8 +470,8 @@ if (mysql_num_rows($existe)>0) {
 
                             setTimeout(volver, 4000);
 
-                        } 
-                        else 
+                        }
+                        else
                         {
 
                             if ($('#valorPregunta').val() == 4) //si acierta le muestro que gana una botella y sigue
@@ -468,7 +492,7 @@ if (mysql_num_rows($existe)>0) {
                                     $('#responder').show();
 
                                     cargarAcierto(1); //marco un intento y un acierto
-                        
+
                                     $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
                                     $('body').css("background-image", "url(../imagenes/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
@@ -518,25 +542,25 @@ if (mysql_num_rows($existe)>0) {
 
                                         $('#contenedorPreguntas').hide();
                                         $('#contenedorGanaMeetGreet').show();
-                                        
+
                                         modificarEstado(3);
-                                        
+
                                         $('body').css("background-image", "url(../imagenes/bg_ganaste_meetgreetb.jpg)"); // modifico la imagen de fondo
 
                                         cargarAcierto(1); //marco un intento y un acierto
 
-                                        
+
 
                                         setTimeout(function(){
 
                                             volver();
-                                            
+
                                         }, 4000);
                                     }
-                                    else 
+                                    else
                                     {
                                         cargarAcierto(1); //marco un intento y un acierto
-                        
+
                                         $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
                                         $('body').css("background-image", "url(../imagenes/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
@@ -545,17 +569,17 @@ if (mysql_num_rows($existe)>0) {
 
                                         traerPregunta($('#valorPregunta').val());
                                     }
-                                    
+
                                 }
                             }
-                            
+
                         }
 
                     } else {
                         if ($('#valorPregunta').val() == 4) //si es la pregunta 4 si pierde lo dejo pasar
                         {
                             cargarAcierto(1); //marco un intento y un acierto
-                        
+
                             $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
                             $('body').css("background-image", "url(../imagenes/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
@@ -570,13 +594,13 @@ if (mysql_num_rows($existe)>0) {
                             {
                                 $('#contenedorPreguntas').hide();
                                 $('#contenedorRespuestaIncorrecta').show();
-                                
+
                                 setTimeout(cambiarBackground('url(../imagenes/bg_respuesta_incorrectab.jpg)'), 3000);
-                                
+
                                 $('#lstPreguntas').hide();
                                 $('#responder').hide();
 
-                                bar.set(1);
+                                //bar.set(1);
 
                                 setTimeout(function(){
 
@@ -597,10 +621,10 @@ if (mysql_num_rows($existe)>0) {
 
                                     traerPregunta(11);
                                 }, 3000);
-                                
+
 
                             }
-                            else 
+                            else
                             {
                                 $('body').css("background-image", "url(../imagenes/bg_respuesta_incorrecta_finalb.jpg)"); // modifico la imagen de fondo
 
@@ -613,14 +637,14 @@ if (mysql_num_rows($existe)>0) {
                                 modificarEstado(3);
 
                                 setTimeout(volver, 3000);
-                                
+
                             }
                         }
-                        
 
-                    }    
+
+                    }
                 }
-                
+
             });
 
             function cargarAcierto(acierto) {
@@ -635,7 +659,7 @@ if (mysql_num_rows($existe)>0) {
                     },
                     success:  function (response) {
 
-                            
+
                     }
                 });
             }
@@ -653,7 +677,7 @@ if (mysql_num_rows($existe)>0) {
                     },
                     success:  function (response) {
 
-                            
+
                     }
                 });
             }
@@ -670,7 +694,7 @@ if (mysql_num_rows($existe)>0) {
                     },
                     success:  function (response) {
 
-                            
+
                     }
                 });
             }
@@ -687,7 +711,7 @@ if (mysql_num_rows($existe)>0) {
                     },
                     success:  function (response) {
 
-                            
+
                     }
                 });
             }
@@ -701,7 +725,7 @@ if (mysql_num_rows($existe)>0) {
             //$('body').css("background-image", "url(../imagenes/bg_tiempo_agotado.jpg)");
 
         });/* fin del document ready */
-    
+
     </script>
 
     </body>

@@ -1,0 +1,167 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+
+	font-family:RobotoThin;
+	width: 100%;
+	height: auto;
+
+	background: #020230 url(../imagenes/lapreli/bg-2.jpg) 0% 0% no-repeat;
+	background-size: cover;
+/*background:#FFF;*/
+}
+
+.titulo {
+	text-align: center;
+	margin-top: 4%;
+}
+
+.titulo2 {
+	text-align: center;
+	margin-top: 5%;
+}
+
+.titulo3 {
+	text-align: center;
+	margin-top: 7%;
+}
+
+.titulo img {
+	width: 27%;
+}
+
+.row {
+  width: 97%;
+}
+
+.enjoy-css {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 90%;
+  padding: 7px 20px;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 22px;
+  border-radius: 22px;
+  font: normal 16px/normal DINLightRegular;
+  color: #0f0559;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(255,255,255,1);
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.enjoy-css-buttom {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 3px 20px;
+  border: 1px solid #382d99;
+  -webkit-border-radius: 23px;
+  border-radius: 23px;
+  font: normal 30px BebasNeueRegular;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(53,42,151,1);
+}
+
+.enjoy-css-buttom2 {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 3px 20px;
+  border: 1px solid #382d99;
+  -webkit-border-radius: 23px;
+  border-radius: 23px;
+  font: normal 30px BebasNeueRegular;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(53,42,151,1);
+  -webkit-box-shadow: 4px 5px 40px -10px rgba(53,42,151,1.8);
+   -moz-box-shadow: 4px 5px 40px -10px rgba(53,42,151,1.8);
+   box-shadow: 5px 40px -10px rgba(53,42,151,1.8);
+}
+
+.enjoy-css-buttom::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -5px;
+  left: -2%;
+  height: 110%;
+  width: 105%;
+  opacity: 0.8;
+  border-radius: 50px;
+
+  /* Declaring our shadow color inherit from the parent (button) */
+  background: inherit;
+
+  /* Blurring the element for shadow effect */
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
+
+  /* Transition for the magic */
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.enjoy-css-buttom:hover {
+	background: rgba(146,152,186,1);
+	color: rgba(255,255,255,1);
+}
+
+.enjoy-css:focus{
+	outline:0px;
+}
+
+.checkLabel {
+	color: #FFF !important;
+	margin-top: 2px;
+}
+
+.labelTribia {
+	font: normal 18px DINLightRegular;
+}
+
+
+.errorInput {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  border: 1px solid #ff0000;
+  -webkit-border-radius: 23px;
+  border-radius: 23px;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(255,255,255,1);
+  -webkit-box-shadow: 0 0 3px 2px rgba(186,16,16,0.5) ;
+  box-shadow: 0 0 3px 2px rgba(186,16,16,0.5) ;
+}
+
+@font-face {
+  font-family: "DINLightRegular";
+  src: url("../fuentes/Formulario/DIN Light Regular/DIN Light Regular.otf");
+}
+
+@font-face {
+  font-family: "BebasNeueRegular";
+  src: url("../fuentes/Quiz/Bebas Neue/BebasNeue Regular.otf");
+}

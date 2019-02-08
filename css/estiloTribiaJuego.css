@@ -6,8 +6,8 @@
 body {
 
   width: 100%;
-  height: auto;
-	background: #0f0559 url(../imagenes/bg_pregunta_1.jpg) 0% 0% no-repeat;
+  height: 100%;
+	background: #0f0559 url(../imagenes/lapreli/bg-2.jpg) 0% 0% no-repeat;
   background-size: cover;
 /*background:#FFF;*/
 }
@@ -146,7 +146,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: url(../imagenes/bg_hielo_footer.png)  0% 0% no-repeat;
+    background: url(../imagenes/lapreli/bg_hielo_footer3.png)  0% 0% no-repeat;
     background-size: cover;
     color: white;
     text-align: center;
@@ -164,5 +164,3 @@ body {
   font-family: "BebasNeueRegular";
   src: url("../fuentes/Quiz/Bebas Neue/BebasNeue Regular.otf");
 }
-
-
