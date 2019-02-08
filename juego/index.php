@@ -188,7 +188,7 @@ if (mysql_num_rows($existe)>0) {
         <!-- animated bounceInRight delay-1s -->
         <div id="contenedorGanaBotella" style="display: none;">
 
-            <img class="animated flash infinite" src="../imagenes/bg_confetib.png" style="float: left; top: 0; left: 0; width: 95%;z-index: 59; position: absolute;">
+            <img class="animated flash infinite" src="../imagenes/lapreli/bg_confetib.png" style="float: left; top: 0; left: 0; width: 95%;z-index: 59; position: absolute;">
             <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <img class="animated pulse infinite delay-1s" src="../imagenes/bg_destapador_solo.png" style="float: left; top: 40%; left: 50%; width: 20%;z-index: 200; position: absolute; margin-left: -20%;margin-top: -17%;">
@@ -234,8 +234,8 @@ if (mysql_num_rows($existe)>0) {
 
         <div id="contenedorRespuestaIncorrecta" style="display: none;">
 
-            <img class="animated flash infinite" src="../imagenes/bg_respuesta_incorrecta.png" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
-            <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
+            <img class="animated flash infinite" src="../imagenes/lapreli/bg_respuesta_incorrecta.png" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
+            <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
 
@@ -245,8 +245,8 @@ if (mysql_num_rows($existe)>0) {
 
         <div id="contenedorTiempoAgotado" style="display: none;">
 
-            <img class="animated flash infinite delay-1s" src="../imagenes/bg_tiempo_agotado.png" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
-            <img class="animated bounceInLeft delay-1s acarr" src="../imagenes/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
+            <img class="animated flash infinite delay-1s" src="../imagenes/lapreli/bg_tiempo_agotado.png" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
+            <img class="animated bounceInLeft delay-1s acarr" src="../imagenes/lapreli/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
 
@@ -495,7 +495,7 @@ if (mysql_num_rows($existe)>0) {
 
                                     $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
-                                    $('body').css("background-image", "url(../imagenes/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+                                    $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
 
                                     $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
@@ -524,7 +524,7 @@ if (mysql_num_rows($existe)>0) {
 
                                         $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
-                                        $('body').css("background-image", "url(../imagenes/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+                                        $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
 
                                         $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
@@ -563,7 +563,7 @@ if (mysql_num_rows($existe)>0) {
 
                                         $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
-                                        $('body').css("background-image", "url(../imagenes/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+                                        $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
 
                                         $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
@@ -582,7 +582,7 @@ if (mysql_num_rows($existe)>0) {
 
                             $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
-                            $('body').css("background-image", "url(../imagenes/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+                            $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
 
                             $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
@@ -595,7 +595,7 @@ if (mysql_num_rows($existe)>0) {
                                 $('#contenedorPreguntas').hide();
                                 $('#contenedorRespuestaIncorrecta').show();
 
-                                setTimeout(cambiarBackground('url(../imagenes/bg_respuesta_incorrectab.jpg)'), 3000);
+                                setTimeout(cambiarBackground('url(../imagenes/lapreli/bg_respuesta_incorrectab.jpg)'), 3000);
 
                                 $('#lstPreguntas').hide();
                                 $('#responder').hide();
@@ -626,7 +626,7 @@ if (mysql_num_rows($existe)>0) {
                             }
                             else
                             {
-                                $('body').css("background-image", "url(../imagenes/bg_respuesta_incorrecta_finalb.jpg)"); // modifico la imagen de fondo
+                                $('body').css("background-image", "url(../imagenes/lapreli/bg_respuesta_incorrecta_finalb.jpg)"); // modifico la imagen de fondo
 
                                 $('#contenedorPreguntas').hide();
                                 $('#contenedorRespuestaIncorrecta').show();
