@@ -5,18 +5,18 @@ date_default_timezone_set('America/Buenos_Aires');
 class appconfig {
 
 function conexion() {
-
+/*
 		$hostname = "localhost";
 		$database = "trivia593lapreli";
 		$username = "root";
 		$password = "";
+*/
 
-		/*
 		$hostname = "localhost";
-		$database = "593crvz";
-		$username = "crvz593-bbdd";
-		$password = "@5C9R3V*DB!";
-		*/
+		$database = "u235498999_preli";
+		$username = "u235498999_preli";
+		$password = "rhcp7575preli";
+
 		//u235498999_kike usuario
 
 
