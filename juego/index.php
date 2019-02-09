@@ -234,7 +234,7 @@ if (mysql_num_rows($existe)>0) {
 
         <div id="contenedorRespuestaIncorrecta" style="display: none;">
 
-            <img class="animated flash infinite" src="../imagenes/lapreli/bg_respuesta_incorrecta.png" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
+            <img class="animated flash infinite" src="../imagenes/lapreli/bg_respuesta_incorrecta.jpg" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
             <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
@@ -245,7 +245,7 @@ if (mysql_num_rows($existe)>0) {
 
         <div id="contenedorTiempoAgotado" style="display: none;">
 
-            <img class="animated flash infinite delay-1s" src="../imagenes/lapreli/bg_tiempo_agotado.png" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
+            <img class="animated flash infinite delay-1s" src="../imagenes/lapreli/bg_tiempo_agotado.jpg" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
             <img class="animated bounceInLeft delay-1s acarr" src="../imagenes/lapreli/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
