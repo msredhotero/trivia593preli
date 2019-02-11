@@ -7,7 +7,7 @@ body {
 
 	font-family:RobotoThin;
 	width: 100%;
-	height: auto;
+	height: 100%;
 
 	background: #020230 url(../imagenes/lapreli/bg-2.jpg) 0% 0% no-repeat;
 	background-size: cover;
@@ -90,9 +90,9 @@ body {
   -o-text-overflow: clip;
   text-overflow: clip;
   background: rgba(53,42,151,1);
-  -webkit-box-shadow: 4px 5px 40px -10px rgba(53,42,151,1.8);
-   -moz-box-shadow: 4px 5px 40px -10px rgba(53,42,151,1.8);
-   box-shadow: 5px 40px -10px rgba(53,42,151,1.8);
+  -webkit-box-shadow: 0px 0px 0px 12px rgba(53,42,151,1);
+   -moz-box-shadow: 0px 0px 0px 12px rgba(53,42,151,1);
+   box-shadow: 0px 0px 12px rgba(53,42,151,1);
 }
 
 .enjoy-css-buttom::after {

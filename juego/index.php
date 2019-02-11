@@ -35,7 +35,7 @@ if (mysql_num_rows($existe)>0) {
     if (mysql_result($existe, 0,'intento') == 0) {
         $yajugo = 0;
     } else {
-        $yajugo = 0;
+        $yajugo = 1;
         //$serviciosReferencias->modificarEstado($_SESSION['idparticipante'],4);
     }
 
@@ -49,7 +49,7 @@ if (mysql_num_rows($existe)>0) {
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <title>Trivia Cerveza 593</title>
+        <title>Trivia Cerveza 593 La PreLi</title>
         <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 
         <link rel="stylesheet" href="../css/jquery-ui.css">
@@ -73,12 +73,27 @@ if (mysql_num_rows($existe)>0) {
     <body>
 
         <form role="form" class="form-horizontal">
-         <div id="contenedorVideos">
+         <div class="row" id="contenedorFinalizo">
+            <div class="col-md-3 col-xs-3 titulo3" align="right" style="text-align: right;">
+               <button type="button" class="btn btn-default enjoy-css-buttom3" id="volverParticipante">VOLVER</button>
+            </div>
+            <div class="col-md-6 col-xs-6 titulo3" align="center" style="color:white; font-size:1.8em;">
+               <p>FELICITACIONES <?php echo strtoupper( substr($_SESSION['nombre_participante'],0,25)); ?>!
+            ESCANEA EL CÓDIGO QR,
+            SÍGUENOS EN INSTAGRAM
+            Y COMPARTA CON TUS AMIGOS</p>
+            </div>
+            <div class="col-md-3 col-xs-3">
+            </div>
+
+         </div>
+
+         <div id="contenedorVideos1">
             <div class="row" style="margin-top:2%;">
                <div class="col-md-1 col-xs-1">
                </div>
                <div class="col-md-10 col-xs-10" align="center">
-                  <video width="90%" height="90%" id="myVideo" autoplay>
+                  <video width="90%" height="90%" id="myVideo1" autoplay>
                   <source src="../imagenes/lapreli/videos/Nivel_1-PISCINA.mp4" type="video/mp4">
                   Tu navegador no soporta vídeo.
                   </video>
@@ -87,7 +102,66 @@ if (mysql_num_rows($existe)>0) {
                </div>
 
            	</div>
+            <div class="footer">
+
+            </div>
          </div>
+         <div id="contenedorVideos2">
+            <div class="row" style="margin-top:2%;">
+               <div class="col-md-1 col-xs-1">
+               </div>
+               <div class="col-md-10 col-xs-10" align="center">
+                  <video width="90%" height="90%" id="myVideo2">
+                  <source src="../imagenes/lapreli/videos/Nivel_2-KARAOKE.mp4" type="video/mp4">
+                  Tu navegador no soporta vídeo.
+                  </video>
+               </div>
+               <div class="col-md-1 col-xs-1">
+               </div>
+
+           	</div>
+            <div class="footer">
+
+            </div>
+         </div>
+         <div id="contenedorVideos3">
+            <div class="row" style="margin-top:2%;">
+               <div class="col-md-1 col-xs-1">
+               </div>
+               <div class="col-md-10 col-xs-10" align="center">
+                  <video width="90%" height="90%" id="myVideo3" >
+                  <source src="../imagenes/lapreli/videos/Nivel_3-PLAYA.mp4" type="video/mp4">
+                  Tu navegador no soporta vídeo.
+                  </video>
+               </div>
+               <div class="col-md-1 col-xs-1">
+               </div>
+
+           	</div>
+            <div class="footer">
+
+            </div>
+         </div>
+         <div id="contenedorVideos4">
+            <div class="row" style="margin-top:2%;">
+               <div class="col-md-1 col-xs-1">
+               </div>
+               <div class="col-md-10 col-xs-10" align="center">
+                  <video width="90%" height="90%" id="myVideo4" >
+                  <source src="../imagenes/lapreli/videos/Nivel_4-NEON.mp4" type="video/mp4">
+                  Tu navegador no soporta vídeo.
+                  </video>
+               </div>
+               <div class="col-md-1 col-xs-1">
+               </div>
+
+           	</div>
+            <div class="footer">
+
+            </div>
+         </div>
+
+
         <div id="contenedorPreguntas" style="display: none;">
         	<div class="row titulo" align="center" id="lstPreguntas">
                 <div class="row" style="margin-top: 0%;">
@@ -155,9 +229,11 @@ if (mysql_num_rows($existe)>0) {
                     if ($yajugo == 1) {
                     ?>
                     <button type="button" class="btn btn-default enjoy-css-buttom-juego" id="volver">YA PARTICIPO - VOLVER</button>
+                    <button type="button" class="btn btn-default enjoy-css-buttom-juego hidden" id="responder">RESPUESTA</button>
                     <?php
                     } else {
                     ?>
+                    <button type="button" class="btn btn-default enjoy-css-buttom-juego hidden" id="volver">YA PARTICIPO - VOLVER</button>
                     <button type="button" class="btn btn-default enjoy-css-buttom-juego" id="responder">RESPUESTA</button>
                     <?php
                     }
@@ -189,10 +265,7 @@ if (mysql_num_rows($existe)>0) {
         <div id="contenedorGanaBotella" style="display: none;">
 
             <img class="animated flash infinite" src="../imagenes/lapreli/bg_confetib.png" style="float: left; top: 0; left: 0; width: 95%;z-index: 59; position: absolute;">
-            <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
-
-            <img class="animated pulse infinite delay-1s" src="../imagenes/bg_destapador_solo.png" style="float: left; top: 40%; left: 50%; width: 20%;z-index: 200; position: absolute; margin-left: -20%;margin-top: -17%;">
-
+            <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
 
@@ -233,14 +306,14 @@ if (mysql_num_rows($existe)>0) {
 
 
         <div id="contenedorRespuestaIncorrecta" style="display: none;">
-
+           <!--
             <img class="animated flash infinite" src="../imagenes/lapreli/bg_respuesta_incorrecta.jpg" style="float: left; top: 0; left: 0; width: 100%;z-index: 50; position: absolute;">
             <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/bg_otela_iniciob.png" style="float: left; top: 0; left: 0; position: absolute; height: 100%; z-index: 97; margin-left: 5%;">
 
             <div class="footer">
 
             </div>
-
+         -->
         </div>
 
         <div id="contenedorTiempoAgotado" style="display: none;">
@@ -284,10 +357,37 @@ if (mysql_num_rows($existe)>0) {
     <script type="text/javascript">
 
         $(document).ready(function(){
+           //$('#contenedorVideos1').hide();
+           $('#contenedorVideos2').hide();
+           $('#contenedorVideos3').hide();
+           $('#contenedorVideos4').hide();
+           $('#contenedorFinalizo').hide();
 
-           $("#myVideo").on('ended', function(){
+           $("#myVideo1").on('ended', function(){
              cambiarBackground('url(../imagenes/lapreli/bg_pregunta_1.jpg)');
-             $('#contenedorVideos').hide();
+
+             $('#contenedorVideos1').hide();
+             $('#contenedorPreguntas').show();
+           });
+
+           $("#myVideo2").on('ended', function(){
+             cambiarBackground('url(../imagenes/lapreli/bg_pregunta_2.jpg)');
+
+             $('#contenedorVideos2').hide();
+             $('#contenedorPreguntas').show();
+           });
+
+           $("#myVideo3").on('ended', function(){
+             cambiarBackground('url(../imagenes/lapreli/bg_pregunta_3.jpg)');
+
+             $('#contenedorVideos3').hide();
+             $('#contenedorPreguntas').show();
+           });
+
+           $("#myVideo4").on('ended', function(){
+             cambiarBackground('url(../imagenes/lapreli/bg_pregunta_4.jpg)');
+
+             $('#contenedorVideos4').hide();
              $('#contenedorPreguntas').show();
            });
 
@@ -298,6 +398,10 @@ if (mysql_num_rows($existe)>0) {
 
             });
 
+            $('#volverParticipante').click(function() {
+                url = "../participantes/";
+                $(location).attr('href',url);
+            });
 
             $('#volver').click(function() {
                 url = "../participantes/";
@@ -305,8 +409,11 @@ if (mysql_num_rows($existe)>0) {
             });
 
             function volver(){
-                url = "../participantes/";
-                $(location).attr('href',url);
+               cambiarBackground('url(../imagenes/lapreli/bg_juego_finalizado.jpg)');
+               $('#contenedorFinalizo').show();
+               $('#contenedorGanaBotella').hide();
+               $('#contenedorVideos4').hide();
+               $('#contenedorPreguntas').hide();
             }
 
             function cambiarBackground(background){
@@ -461,7 +568,7 @@ if (mysql_num_rows($existe)>0) {
                             $('#lstPreguntas').hide();
                             $('#responder').hide();
 
-                            $('body').css("background-image", "url(../imagenes/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
+                            $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
 
                             $('#contenedorPreguntas').hide();
                             $('#contenedorGanaBotella').show();
@@ -474,14 +581,14 @@ if (mysql_num_rows($existe)>0) {
                         else
                         {
 
-                            if ($('#valorPregunta').val() == 4) //si acierta le muestro que gana una botella y sigue
+                            if ($('#valorPregunta').val() == 1) //si acierta le muestro que gana una botella y sigue
                             {
                                 $('#lstPreguntas').hide();
                                 $('#responder').hide();
 
-                                cargarBonoB();
+                                //cargarBonoB();
 
-                                $('body').css("background-image", "url(../imagenes/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
+                                $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
 
                                 $('#contenedorPreguntas').hide();
                                 $('#contenedorGanaBotella').show();
@@ -495,27 +602,29 @@ if (mysql_num_rows($existe)>0) {
 
                                     $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
-                                    $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+
+                                    $('body').css("background-image", "url(../imagenes/lapreli/bg-2.jpg)"); // modifico la imagen de fondo
 
                                     $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
                                     traerPregunta($('#valorPregunta').val());
 
-                                    $('#contenedorPreguntas').show();
+                                    $('#contenedorVideos2').show();
+                                    $('#myVideo2').get(0).play();
                                     $('#contenedorGanaBotella').hide();
                                 }, 3000);
                             } else {
-                                if ($('#valorPregunta').val() == 7) //si acierta le muestro que gana una botella y sigue
+                                if ($('#valorPregunta').val() == 2) //si acierta le muestro que gana una botella y sigue
                                 {
                                     $('#lstPreguntas').hide();
                                     $('#responder').hide();
 
                                     $('#contenedorPreguntas').hide();
-                                    $('#contenedorGanaEntrada').show();
+                                    $('#contenedorGanaBotella').show();
 
                                     cargarAcierto(1); //marco un intento y un acierto
 
-                                    $('body').css("background-image", "url(../imagenes/bg_ganaste_entradab.jpg)"); // modifico la imagen de fondo
+                                    $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
 
                                     setTimeout(function(){
 
@@ -524,50 +633,112 @@ if (mysql_num_rows($existe)>0) {
 
                                         $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
-                                        $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+                                       $('body').css("background-image", "url(../imagenes/lapreli/bg-2.jpg)"); // modifico la imagen de fondo
 
                                         $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
-                                        $('#contenedorPreguntas').show();
-                                        $('#contenedorGanaEntrada').hide();
+                                        $('#contenedorVideos3').show();
+                                        $('#myVideo3').get(0).play();
+                                        $('#contenedorGanaBotella').hide();
 
                                         traerPregunta($('#valorPregunta').val());
                                     }, 3000);
                                 } else {
 
-                                    if ($('#valorPregunta').val() == 10) //si acierta le muestro que gana el meet y greed y termina
+                                    if ($('#valorPregunta').val() == 3) //si acierta sigo
                                     {
-                                        $('#lstPreguntas').hide();
-                                        $('#responder').hide();
+                                       $('#lstPreguntas').hide();
+                                       $('#responder').hide();
 
-                                        $('#contenedorPreguntas').hide();
-                                        $('#contenedorGanaMeetGreet').show();
+                                       $('#contenedorPreguntas').hide();
+                                       $('#contenedorGanaBotella').show();
 
-                                        modificarEstado(3);
+                                       cargarAcierto(1); //marco un intento y un acierto
 
-                                        $('body').css("background-image", "url(../imagenes/bg_ganaste_meetgreetb.jpg)"); // modifico la imagen de fondo
+                                       $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
 
-                                        cargarAcierto(1); //marco un intento y un acierto
+                                       setTimeout(function(){
 
+                                           $('#lstPreguntas').show();
+                                           $('#responder').show();
 
+                                           $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
 
-                                        setTimeout(function(){
+                                          $('body').css("background-image", "url(../imagenes/lapreli/bg-2.jpg)"); // modifico la imagen de fondo
 
-                                            volver();
+                                           $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
-                                        }, 4000);
+                                           $('#contenedorVideos4').show();
+                                           $('#myVideo4').get(0).play();
+                                           $('#contenedorGanaBotella').hide();
+
+                                           traerPregunta($('#valorPregunta').val());
+                                       }, 3000);
                                     }
                                     else
                                     {
-                                        cargarAcierto(1); //marco un intento y un acierto
+                                       if ($('#valorPregunta').val() == 4) {
+                                          $('#lstPreguntas').hide();
+                                          $('#responder').hide();
 
-                                        $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
+                                          $('#contenedorPreguntas').hide();
+                                          $('#contenedorGanaBotella').show();
 
-                                        $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+                                          cargarAcierto(1); //marco un intento y un acierto
 
-                                        $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
+                                          $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
 
-                                        traerPregunta($('#valorPregunta').val());
+                                          setTimeout(function(){
+
+                                              $('#lstPreguntas').show();
+                                              $('#responder').show();
+
+                                              $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
+
+                                              $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+
+                                              $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
+
+                                              $('#contenedorPreguntas').show();
+                                              $('#contenedorGanaBotella').hide();
+
+                                              traerPregunta($('#valorPregunta').val());
+                                          }, 3000);
+                                       } else {
+                                          if ($('#valorPregunta').val() == 5) {
+                                             $('#lstPreguntas').hide();
+                                            $('#responder').hide();
+
+                                            $('#contenedorPreguntas').hide();
+                                            $('#contenedorGanaBotella').hide();
+
+                                            modificarEstado(3);
+
+                                            //aca va jawa
+                                            $('body').css("background-image", "url(../imagenes/lapreli/bg_juego_finalizado.jpg)"); // modifico la imagen de fondo
+
+                                            cargarAcierto(1); //marco un intento y un acierto
+
+
+
+                                            setTimeout(function(){
+                                               $('#contenedorFinalizo').show();
+                                                volver();
+
+                                            }, 4000);
+                                          } else {
+                                             cargarAcierto(1); //marco un intento y un acierto
+
+                                            $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
+
+                                            $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+
+                                            $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
+
+                                            traerPregunta($('#valorPregunta').val());
+                                          }
+                                       }
+
                                     }
 
                                 }
@@ -576,70 +747,57 @@ if (mysql_num_rows($existe)>0) {
                         }
 
                     } else {
-                        if ($('#valorPregunta').val() == 4) //si es la pregunta 4 si pierde lo dejo pasar
-                        {
-                            cargarAcierto(1); //marco un intento y un acierto
 
-                            $('#valorPregunta').val( parseInt($('#valorPregunta').val())+1 ); //cambio el nivel de pregunta
+                      if ($('#valorPregunta').val() != 11)  //si es el punto bonos despues termina
+                      {
+                          $('#contenedorPreguntas').hide();
+                          $('#contenedorRespuestaIncorrecta').show();
 
-                            $('body').css("background-image", "url(../imagenes/lapreli/bg_pregunta_" + $('#valorPregunta').val() + ".jpg)"); // modifico la imagen de fondo
+                          cambiarBackground('url(../imagenes/lapreli/bg_respuesta_incorrecta_finalb.jpg');
 
-                            $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
+                          $('#lstPreguntas').hide();
+                          $('#responder').hide();
 
-                            traerPregunta($('#valorPregunta').val());
-                        }
-                        else
-                        {
-                            if ($('#valorPregunta').val() != 11)  //si es el punto bonos despues termina
-                            {
-                                $('#contenedorPreguntas').hide();
-                                $('#contenedorRespuestaIncorrecta').show();
+                          //bar.set(1);
 
-                                setTimeout(cambiarBackground('url(../imagenes/lapreli/bg_respuesta_incorrectab.jpg)'), 3000);
+                          setTimeout(function(){
 
-                                $('#lstPreguntas').hide();
-                                $('#responder').hide();
+                              $('#lstPreguntas').show();
+                              $('#responder').show();
 
-                                //bar.set(1);
+                              cargarAcierto(0);  //marco un intento
+                              // si falla en lo envio al punto bono
+                              $('#valorPregunta').val(11);
 
-                                setTimeout(function(){
+                              $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
 
-                                    $('#lstPreguntas').show();
-                                    $('#responder').show();
+                              setTimeout(cambiarBackground('url(../imagenes/lapreli/bg_pregunta_bono.jpg)'), 3000);
+                               //$('body').css("background-image", "url(../imagenes/bg_pregunta_bono.jpg)"); // modifico la imagen de fondo
 
-                                    cargarAcierto(0);  //marco un intento
-                                    // si falla en lo envio al punto bono
-                                    $('#valorPregunta').val(11);
+                               $('#contenedorPreguntas').show();
+                              $('#contenedorRespuestaIncorrecta').hide();
 
-                                    $('#valorRespuesta').val(0); //vuelvo a cero el valor de la eleccion de las respuestas
-
-                                    setTimeout(cambiarBackground('url(../imagenes/bg_pregunta_bono.jpg)'), 3000);
-                                     //$('body').css("background-image", "url(../imagenes/bg_pregunta_bono.jpg)"); // modifico la imagen de fondo
-
-                                     $('#contenedorPreguntas').show();
-                                    $('#contenedorRespuestaIncorrecta').hide();
-
-                                    traerPregunta(11);
-                                }, 3000);
+                              traerPregunta(11);
+                          }, 3000);
 
 
-                            }
-                            else
-                            {
-                                $('body').css("background-image", "url(../imagenes/lapreli/bg_respuesta_incorrecta_finalb.jpg)"); // modifico la imagen de fondo
+                      }
+                      else
+                      {
+                          $('body').css("background-image", "url(../imagenes/lapreli/bg_juego_finalizado.jpg)"); // modifico la imagen de fondo
 
-                                $('#contenedorPreguntas').hide();
-                                $('#contenedorRespuestaIncorrecta').show();
+                          $('#contenedorPreguntas').hide();
+                          $('#contenedorRespuestaIncorrecta').show();
 
-                                $('#lstPreguntas').hide();
-                                $('#responder').hide();
+                          $('#lstPreguntas').hide();
+                          $('#responder').hide();
 
-                                modificarEstado(3);
+                          modificarEstado(3);
 
-                                setTimeout(volver, 3000);
+                          setTimeout(volver, 1000);
 
-                            }
-                        }
+                      }
+
 
 
                     }
@@ -658,7 +816,9 @@ if (mysql_num_rows($existe)>0) {
 
                     },
                     success:  function (response) {
-
+                       if (response == 'salir') {
+                          volver();
+                       }
 
                     }
                 });
