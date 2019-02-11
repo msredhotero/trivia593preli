@@ -93,7 +93,7 @@ if (mysql_num_rows($existe)>0) {
                <div class="col-md-1 col-xs-1">
                </div>
                <div class="col-md-10 col-xs-10" align="center">
-                  <video width="90%" height="90%" id="myVideo1" autoplay>
+                  <video width="90%" height="90%" id="myVideo1">
                   <source src="../imagenes/lapreli/videos/Nivel_1-PISCINA.mp4" type="video/mp4">
                   Tu navegador no soporta vídeo.
                   </video>
@@ -362,6 +362,8 @@ if (mysql_num_rows($existe)>0) {
            $('#contenedorVideos3').hide();
            $('#contenedorVideos4').hide();
            $('#contenedorFinalizo').hide();
+
+           $('#myVideo1').get(0).play();
 
            $("#myVideo1").on('ended', function(){
              cambiarBackground('url(../imagenes/lapreli/bg_pregunta_1.jpg)');
