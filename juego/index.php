@@ -112,7 +112,7 @@ if (mysql_num_rows($existe)>0) {
                </div>
                <div class="col-md-10 col-xs-10" align="center">
                   <video width="90%" height="90%" id="myVideo2">
-                  <source src="../imagenes/lapreli/videos/Nivel_2-KARAOKE.mp4" type="video/mp4">
+                  <source src="../imagenes/lapreli/videos/Nivel_2-KARAOKEs.mp4" type="video/mp4">
                   Tu navegador no soporta vídeo.
                   </video>
                </div>
