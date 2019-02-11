@@ -78,7 +78,7 @@ if (mysql_num_rows($existe)>0) {
                <button type="button" class="btn btn-default enjoy-css-buttom3" id="volverParticipante">VOLVER</button>
             </div>
             <div class="col-md-6 col-xs-6 titulo3" align="center" style="color:white; font-size:1.8em;">
-               <p>FELICITACIONES <?php echo strtoupper( substr($_SESSION['nombre_participante'],0,25)); ?>!
+               <p>FELICITACIONES <?php echo strtoupper( substr($_SESSION['nombre_participante'],0,25)); ?>!. GANÓ <span id="gano"></span> CERVEZAS,
             ESCANEA EL CÓDIGO QR,
             SÍGUENOS EN INSTAGRAM
             Y COMPARTA CON TUS AMIGOS</p>
@@ -819,6 +819,22 @@ if (mysql_num_rows($existe)>0) {
                        if (response == 'salir') {
                           volver();
                        }
+
+                    }
+                });
+            }
+
+            function traerAciertos() {
+                $.ajax({
+                    data:  {id: <?php echo $_SESSION['idparticipante']; ?>,
+                            accion:     'traerAciertos'},
+                    url:   '../ajax/ajax.php',
+                    type:  'post',
+                    beforeSend: function () {
+
+                    },
+                    success:  function (response) {
+                       $('#gano').html(response);
 
                     }
                 });

@@ -146,6 +146,10 @@ case 'modificarEstado':
 modificarEstado($serviciosReferencias);
 break;
 
+case 'traerAciertos':
+traerAciertos($serviciosReferencias);
+break;
+
 /* fin juego */
 
 /* Fin */
@@ -155,6 +159,19 @@ break;
 
 
 /* juego */
+
+function traerAciertos($serviciosReferencias) {
+   $id = $_POST['id'];
+
+   $resIntentos = $serviciosReferencias->traernIntentosPorParicipantes($id);
+
+   if (mysql_num_rows($resIntentos) > 0) {
+      echo mysql_result($resIntentos,0,0);
+   } else {
+      echo 0;
+   }
+
+}
 
 function modificarEstado($serviciosReferencias) {
 	$id = $_POST['id'];
