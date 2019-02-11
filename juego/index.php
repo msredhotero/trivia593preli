@@ -363,7 +363,10 @@ if (mysql_num_rows($existe)>0) {
            $('#contenedorVideos4').hide();
            $('#contenedorFinalizo').hide();
 
-           $('#myVideo1').get(0).play();
+            $('#myVideo1').click(function() {
+               $('#myVideo1').get(0).play();
+            })
+
 
            $("#myVideo1").on('ended', function(){
              cambiarBackground('url(../imagenes/lapreli/bg_pregunta_1.jpg)');
@@ -416,6 +419,7 @@ if (mysql_num_rows($existe)>0) {
                $('#contenedorGanaBotella').hide();
                $('#contenedorVideos4').hide();
                $('#contenedorPreguntas').hide();
+               traerAciertos();
             }
 
             function cambiarBackground(background){
