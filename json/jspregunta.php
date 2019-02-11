@@ -42,11 +42,11 @@ $cad = '';
 	while ($row = mysql_fetch_array($resTraerDatos)) {
 		//$cadJugadores .= '"'.$row[0].'": "'.$row['apellido'].', '.$row['nombres'].' - '.$row['nrodocumento'].'",';
 
-		array_push($ar,array('var1' => utf8_encode($row[2]),
-							 'var2' => utf8_decode($row[$rand[0]]),
-							 'var3' => utf8_decode($row[$rand[1]]),
-							 'var4' => utf8_decode($row[$rand[2]]),
-							 'var5' => utf8_decode($row[$rand[3]]),
+		array_push($ar,array('var1' => ($row[2]),
+							 'var2' => ($row[$rand[0]]),
+							 'var3' => ($row[$rand[1]]),
+							 'var4' => ($row[$rand[2]]),
+							 'var5' => ($row[$rand[3]]),
 							 'res1' => $rand[0],
 							 'res2' => $rand[1],
 							 'res3' => $rand[2],
