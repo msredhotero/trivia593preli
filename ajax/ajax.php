@@ -166,7 +166,12 @@ function traerAciertos($serviciosReferencias) {
    $resIntentos = $serviciosReferencias->traernIntentosPorParicipantes($id);
 
    if (mysql_num_rows($resIntentos) > 0) {
-      echo mysql_result($resIntentos,0,0);
+      if (mysql_result($resIntentos,0,0) == 5) {
+         echo '4 CERVEZAS Y UNA JABA';
+      } else {
+         echo mysql_result($resIntentos,0,0).' CERVEZAS';
+      }
+
    } else {
       echo 0;
    }
