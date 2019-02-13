@@ -291,13 +291,12 @@ if (mysql_num_rows($existe)>0) {
         </div>
 
 
-        <div id="contenedorGanaMeetGreet" style="display: none;">
+        <div id="contenedorGanaJaba" style="display: none;">
 
-            <img class="animated flash infinite" src="../imagenes/bg_confeti.png" style="float: left; top: 0; left: 0; width: 95%;z-index: 50; position: absolute;">
-            <img class="animated zoomIn infinite delay-2s" src="../imagenes/bg_meetgret_mgb.png" style="float: left; top: 50%; left: 50%; width: 50%;z-index: 55; position: absolute; margin-left: -25%;margin-top: -17%;">
+            <img class="animated flash infinite" src="../imagenes/lapreli/ganaste.png" style="float: left; top: 0; left: 0; width: 95%;z-index: 50; position: absolute;">
 
-            <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_meetgret_cerveza.png" style="float: right; bottom: 0; right: 0; height: 70%;z-index: 51; position: absolute; margin-right: 4%;">
-            <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_meetgret_cervezab.png" style="float: left; bottom: 0; left: 0; height: 70%;z-index: 52; position: absolute; margin-left: 4%;">
+            <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/jaba_der2c.png" style="float: right; bottom: 0; right: 0; height: 70%;z-index: 51; position: absolute; margin-right: 4%;">
+            <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/jaba_izq2c.png" style="float: left; bottom: 0; left: 0; height: 70%;z-index: 52; position: absolute; margin-left: 4%;">
             <div class="footer">
 
             </div>
@@ -716,18 +715,19 @@ if (mysql_num_rows($existe)>0) {
                                             $('#responder').hide();
 
                                             $('#contenedorPreguntas').hide();
-                                            $('#contenedorGanaBotella').hide();
+                                            $('#contenedorGanaJaba').show();
 
                                             modificarEstado(3);
 
                                             //aca va jawa
-                                            $('body').css("background-image", "url(../imagenes/lapreli/bg_juego_finalizado.jpg)"); // modifico la imagen de fondo
+                                            $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_jaba.png)"); // modifico la imagen de fondo
 
                                             cargarAcierto(1); //marco un intento y un acierto
 
 
 
                                             setTimeout(function(){
+                                               $('#contenedorGanaJaba').hide();
                                                $('#contenedorFinalizo').show();
                                                 volver();
 
