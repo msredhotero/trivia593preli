@@ -276,18 +276,16 @@ if (mysql_num_rows($existe)>0) {
 
 
 
-        <div id="contenedorGanaEntrada" style="display: none;">
+        <div id="contenedorGanaDestapador" style="display: none;">
 
-            <img class="animated flash infinite" src="../imagenes/bg_confeti.png" style="float: left; top: 0; left: 0; width: 95%;z-index: 50; position: absolute;">
-            <img class="animated pulse infinite delay-1s" src="../imagenes/bg_entrada_solo.png" style="float: left; top: 50%; left: 50%; width: 50%;z-index: 55; position: absolute; margin-left: -25%;margin-top: -17%;">
+            <img class="animated flash infinite" src="../imagenes/lapreli/ganaste_destapador.png" style="float: left; top: 0; left: 0; width: 95%;z-index: 50; position: absolute;">
 
-            <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_meetgret_cervezab.png" style="float: right; bottom: 0; right: 0; height: 70%;z-index: 51; position: absolute; margin-right: 9%;">
-            <img class="animated bounceInLeft delay-1s" src="../imagenes/bg_meetgret_cerveza.png" style="float: left; bottom: 0; left: 0; height: 70%;z-index: 52; position: absolute; margin-left: 13%;">
-
+            <img class="animated bounceInLeft delay-1s" src="../imagenes/lapreli/destapador.png" style="float: left; bottom: 0; left: 0; height: 85%;z-index: 51; position: absolute; margin-left: 11%;">
+            <!--
             <div class="footer">
 
             </div>
-
+            -->
         </div>
 
 
@@ -418,6 +416,7 @@ if (mysql_num_rows($existe)>0) {
                $('#contenedorGanaBotella').hide();
                $('#contenedorVideos4').hide();
                $('#contenedorPreguntas').hide();
+               $('#contenedorGanaDestapador').hide();
                traerAciertos();
             }
 
@@ -573,10 +572,10 @@ if (mysql_num_rows($existe)>0) {
                             $('#lstPreguntas').hide();
                             $('#responder').hide();
 
-                            $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_botellab.jpg)"); // modifico la imagen de fondo
+                            $('body').css("background-image", "url(../imagenes/lapreli/bg_ganaste_jaba.png)"); // modifico la imagen de fondo
 
                             $('#contenedorPreguntas').hide();
-                            $('#contenedorGanaBotella').show();
+                            $('#contenedorGanaDestapador').show();
 
                             modificarEstado(3);
 

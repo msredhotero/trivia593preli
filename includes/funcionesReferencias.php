@@ -183,7 +183,7 @@ function agregarAcierto($id, $acierto) {
 }
 
 function traernIntentosPorParicipantes($id) {
-   $sql = "select intento from dbusuariostribia where refparticipantes = ".$id;
+   $sql = "select intento, cantidadaciertos from dbusuariostribia where refparticipantes = ".$id;
    $res = $this->query($sql,0);
 	return $res;
 }
